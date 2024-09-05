@@ -28,6 +28,11 @@ app.get('/api/serial', async (req, res) => {
     res.json(allSerials)
 })
 
+app.get('/api/serial/id', async (req, res) => {
+    let foundSerials = await Serial.findById(req.query.id)
+    res.json(foundSerials)
+})
+
 app.post('/api/serial', async (req, res) => {
     let serial = req.body
 
